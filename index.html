@@ -32,6 +32,56 @@
       </div>
     </section>
 
+    <section class="card kakao-card">
+      <div class="list-head">
+        <div>
+          <h2>카카오톡 공유 설정</h2>
+          <p>카카오디벨로퍼스의 JavaScript 키를 한 번만 입력하면 이 기기에 저장됩니다.</p>
+        </div>
+        <span id="kakaoStatus" class="kakao-status">미설정</span>
+      </div>
+      <div class="kakao-config">
+        <input id="kakaoKey" type="password" placeholder="카카오 JavaScript 키 입력" autocomplete="off">
+        <button id="saveKakaoKey" class="btn btn-primary small-btn" type="button">키 저장</button>
+      </div>
+      <p class="help">※ 카카오디벨로퍼스에서 이 웹페이지의 도메인을 JavaScript SDK 도메인으로 등록해야 실제 친구/채팅방 선택창이 열립니다.</p>
+    </section>
+
+    <section class="card ocr-card">
+      <div class="list-head">
+        <div>
+          <h2>📷 차량 사진으로 번호 인식</h2>
+          <p>주차된 전기차량의 사진을 선택하면 차량번호를 OCR로 읽어 등록할 수 있습니다.</p>
+        </div>
+        <span id="ocrStatus" class="ocr-status">대기</span>
+      </div>
+      <label class="photo-upload">
+        <input id="vehiclePhoto" type="file" accept="image/*" capture="environment">
+        <span class="photo-icon">📸</span>
+        <strong>차량 사진 선택 / 촬영</strong>
+        <small>휴대폰에서는 카메라 촬영도 가능합니다.</small>
+      </label>
+      <div id="photoPreviewWrap" class="photo-preview-wrap" hidden>
+        <img id="photoPreview" alt="선택한 차량 사진 미리보기">
+      </div>
+      <div id="ocrProgressWrap" class="ocr-progress-wrap" hidden>
+        <div class="ocr-progress"><div id="ocrProgress"></div></div>
+        <span id="ocrProgressText">번호 인식 준비 중...</span>
+      </div>
+      <div class="ocr-result-grid">
+        <label>
+          <span>인식된 차량번호</span>
+          <input id="ocrPlate" type="text" placeholder="사진을 선택하면 자동 인식됩니다." maxlength="12" autocomplete="off">
+        </label>
+        <label>
+          <span>차종 <em>사진만으로는 자동 판별되지 않을 수 있습니다.</em></span>
+          <input id="ocrModel" type="text" placeholder="예: 아이오닉5, EV6, 모델Y" maxlength="30" autocomplete="off">
+        </label>
+      </div>
+      <button id="ocrAddBtn" class="btn btn-primary" type="button">＋ 인식된 차량 등록</button>
+      <p class="help">※ OCR은 사진의 밝기·각도·번호판 크기에 따라 오인식할 수 있습니다. 등록 전에 차량번호를 확인하세요.</p>
+    </section>
+
     <section class="card input-card">
       <h2>전기차량 등록</h2>
       <form id="vehicleForm">
@@ -68,6 +118,10 @@
   </main>
 
   <div id="toast" class="toast"></div>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.8.1/kakao.min.js"
+    integrity="sha384-OL+ylM/iuPLtW5U3XcvLSGhE8JzReKDank5InqlHGWPhb4140/yrBw0bg0y7+C9J"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
