@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전기차량 주차 확인 관리</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">PARKING MANAGEMENT</p>
+        <h1>전기차량 주차 확인</h1>
+        <p class="subtitle">주차장을 순찰하며 발견한 전기차량을 간편하게 등록하세요.</p>
+      </div>
+      <button id="shareBtn" class="btn btn-share">카카오톡 공유</button>
+    </header>
+
+    <section class="summary">
+      <div class="stat">
+        <span>현재 등록 차량</span>
+        <strong id="vehicleCount">0</strong><small>대</small>
+      </div>
+      <div class="stat">
+        <span>오늘 등록</span>
+        <strong id="todayCount">0</strong><small>대</small>
+      </div>
+      <div class="stat">
+        <span>마지막 등록</span>
+        <strong id="lastRegistered">-</strong>
+      </div>
+    </section>
+
+    <section class="card input-card">
+      <h2>전기차량 등록</h2>
+      <form id="vehicleForm">
+        <div class="form-grid">
+          <label>
+            <span>차량번호</span>
+            <input id="plate" type="text" placeholder="예: 123가 4567" maxlength="12" required autocomplete="off">
+          </label>
+          <label>
+            <span>차종</span>
+            <input id="model" type="text" placeholder="예: 아이오닉5, EV6, 모델Y" maxlength="30" required autocomplete="off">
+          </label>
+        </div>
+        <button class="btn btn-primary" type="submit">＋ 차량 등록</button>
+      </form>
+    </section>
+
+    <section class="card list-card">
+      <div class="list-head">
+        <div>
+          <h2>등록된 전기차량</h2>
+          <p>등록된 차량을 확인하고 필요하면 개별 삭제할 수 있습니다.</p>
+        </div>
+        <button id="clearBtn" class="btn btn-danger-outline">전체 삭제</button>
+      </div>
+      <div id="emptyState" class="empty">아직 등록된 전기차량이 없습니다.</div>
+      <div id="vehicleList" class="vehicle-list"></div>
+    </section>
+
+    <footer>
+      <span>데이터는 이 기기의 브라우저에 자동 저장됩니다.</span>
+      <span>※ 카카오톡 공유는 휴대폰의 공유 기능을 이용합니다.</span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
