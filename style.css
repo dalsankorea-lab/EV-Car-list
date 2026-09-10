@@ -43,3 +43,31 @@ footer{display:flex;justify-content:space-between;gap:10px;color:#98a2b3;font-si
  footer{flex-direction:column}.vehicle{grid-template-columns:43px 1fr auto;gap:9px}
  .num{width:38px;height:38px}.plate{font-size:16px}
 }
+
+.kakao-card{border-left:4px solid #fee500}
+.kakao-status{font-size:12px;font-weight:800;color:#c93636;background:#fff0f0;padding:6px 9px;border-radius:20px}
+.kakao-status.ready{color:#287a42;background:#eaf8ef}
+.kakao-config{display:grid;grid-template-columns:1fr auto;gap:9px;margin-bottom:7px}
+.small-btn{width:auto;padding:12px 18px}
+.help{font-size:11px;color:#98a2b3;margin:0;line-height:1.5}
+@media(max-width:650px){.kakao-config{grid-template-columns:1fr}.small-btn{width:100%}}
+
+.ocr-card{border-left:4px solid #1976d2}
+.ocr-status{font-size:12px;font-weight:800;color:#667085;background:#f2f4f7;padding:6px 9px;border-radius:20px}
+.ocr-status.working{color:#1764c0;background:#eaf2ff}
+.photo-upload{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;border:2px dashed #cbd5e1;border-radius:12px;background:#f8fafc;cursor:pointer;text-align:center}
+.photo-upload input{display:none}
+.photo-icon{font-size:30px;margin-bottom:5px}
+.photo-upload strong{font-size:14px}
+.photo-upload small{color:#98a2b3;margin-top:4px;font-size:11px}
+.photo-preview-wrap{margin-top:12px;text-align:center}
+.photo-preview-wrap img{max-width:100%;max-height:280px;border-radius:10px;border:1px solid #e5e9f0}
+.ocr-progress-wrap{margin-top:12px}
+.ocr-progress{height:7px;background:#edf0f4;border-radius:10px;overflow:hidden}
+.ocr-progress div{height:100%;width:0%;background:#1976d2;transition:width .15s}
+.ocr-progress-wrap span{display:block;font-size:11px;color:#667085;margin-top:5px}
+.ocr-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:13px 0}
+.ocr-result-grid label span{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:#475467}
+.ocr-result-grid em{font-style:normal;color:#98a2b3;font-weight:400;font-size:10px}
+.help{font-size:11px;color:#98a2b3;margin:8px 0 0;line-height:1.5}
+@media(max-width:650px){.ocr-result-grid{grid-template-columns:1fr}}
